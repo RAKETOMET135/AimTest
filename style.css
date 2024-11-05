@@ -1,0 +1,26 @@
+#level-name{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#target{
+    position: absolute;
+    user-select: none;
+}
+
+#dragable-message{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    cursor: grab;
+}
+
+#dragable-message-text{
+    position: absolute;
+    background-color: rgba(138, 137, 137, 0.74);
+    padding: 5px 10px;
+    border-radius: 5px;
+    user-select: none;
+    cursor: grab;
+}
