@@ -42,10 +42,19 @@ function getLevelTarget(levelNumber, levelScene){
             target.style.top = "500px"
             break
         default:
-            target.style.width = "15px"
-            target.style.height = "15px"
+            if (50 - levelNumber * 2 < 0){
+                target.style.width = (1) + "px"
+                target.style.height = (1) + "px"
+                target.style.left = (250 + Math.floor(Math.random() * 750 + 1)).toString() + "px"
+                target.style.top = (250 + Math.floor(Math.random() * 500 + 1)).toString() + "px"
+
+                break
+            }
+
+            target.style.width = (50 - levelNumber * 2) + "px"
+            target.style.height = (50 - levelNumber * 2) + "px"
             target.style.left = (250 + Math.floor(Math.random() * 750 + 1)).toString() + "px"
-            target.style.top = (250 + Math.floor(Math.random() * 750 + 1)).toString() + "px"
+            target.style.top = (250 + Math.floor(Math.random() * 500 + 1)).toString() + "px"
             break
     }
     

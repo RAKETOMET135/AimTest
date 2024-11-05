@@ -1,5 +1,7 @@
 import {loadLevel, syncMessageTextPosition, getDistanceToTarget, getNumberFromString, removeCurrentLevel} from "./level_handler.js"
 
+const submitAnswer = document.querySelector("#submit-move")
+
 let currentLevel = 1
 
 let currentMessageTarget
@@ -61,7 +63,9 @@ function mouseUp(e){
     isDrag = false
     currentMessageTarget.style.cursor = "grab"
     currentMessageText.style.cursor = "grab"
+}
 
+function onAnswerSubmit(){
     let distance = getDistanceToTarget(currentMessageTarget, currentTarget)
     const computedTargetStyle = window.getComputedStyle(currentTarget)
     let maxAllowedDistance = getNumberFromString(computedTargetStyle.width, 2)
@@ -71,6 +75,13 @@ function mouseUp(e){
         removeCurrentLevel()
 
         currentLevel++
+
+        runLevel(currentLevel)
+    }
+    else{
+        removeCurrentLevel()
+
+        currentLevel = 1
 
         runLevel(currentLevel)
     }
@@ -86,6 +97,8 @@ function main(){
     document.addEventListener("mouseup", (e) => {
         mouseUp(e)
     })
+
+    submitAnswer.addEventListener("click", onAnswerSubmit)
 }
 
 main()
