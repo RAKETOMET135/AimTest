@@ -68,8 +68,10 @@ function mouseUp(e){
 function onAnswerSubmit(){
     let distance = getDistanceToTarget(currentMessageTarget, currentTarget)
     const computedTargetStyle = window.getComputedStyle(currentTarget)
+    const computedMessageTargetStyle = window.getComputedStyle(currentMessageTarget)
     let maxAllowedDistance = getNumberFromString(computedTargetStyle.width, 2)
     maxAllowedDistance /= 2
+    maxAllowedDistance += getNumberFromString(computedMessageTargetStyle.width, 2) / 2
     
     if (distance <= maxAllowedDistance){
         removeCurrentLevel()
