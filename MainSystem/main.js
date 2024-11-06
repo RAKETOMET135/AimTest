@@ -1,6 +1,7 @@
 import {loadLevel, syncMessageTextPosition, getDistanceToTarget, getNumberFromString, removeCurrentLevel} from "./level_handler.js"
 
 const submitAnswer = document.querySelector("#submit-move")
+const accuracyText = document.querySelector("#accuracy")
 
 let currentLevel = 1
 
@@ -78,12 +79,19 @@ function onAnswerSubmit(){
 
         currentLevel++
 
+        let accuracy = 100 - (1 / (maxAllowedDistance / 100) * distance)
+        accuracy = Math.round(accuracy)
+
+        accuracyText.innerText = "Accuracy: " + accuracy.toString() + "%"
+
         runLevel(currentLevel)
     }
     else{
         removeCurrentLevel()
 
         currentLevel = 1
+
+        accuracyText.innerText = "Accuracy: 0%"
 
         runLevel(currentLevel)
     }

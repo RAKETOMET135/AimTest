@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aim Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Italianno&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="level-scene">
-        <h1 id="level-name"></h1>
-        <button id="submit-move">Submit answer</button>
+        <h1 class="button-default" id="level-name"></h1>
+        <button class="button-default" id="submit-move">Submit answer</button>
+        <h1 class="button-default" id="accuracy">Accuracy: 0%</h1>
     </div>
 
     <script src="MainSystem/level_handler.js" type="module"></script>

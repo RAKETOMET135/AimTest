@@ -8,7 +8,7 @@ function getLevelTarget(levelNumber, levelScene){
         case 1:
             target.style.width = "500px"
             target.style.height = "500px"
-            target.style.left = "750px"
+            target.style.left = "850px"
             target.style.top = "150px"
             break
         case 2:
@@ -42,7 +42,7 @@ function getLevelTarget(levelNumber, levelScene){
             target.style.top = "500px"
             break
         default:
-            if (50 - levelNumber * 2 < 0){
+            if (50 - levelNumber * 2 <= 0){
                 target.style.width = (1) + "px"
                 target.style.height = (1) + "px"
                 target.style.left = (250 + Math.floor(Math.random() * 750 + 1)).toString() + "px"
@@ -73,7 +73,7 @@ function createDragableMessage(levelScene){
     let messageText = document.createElement("p")
     levelScene.append(messageText)
     messageText.id = "dragable-message-text"
-    messageText.innerText = "Move to red and white target"
+    messageText.innerText = "Move to target"
 
     return [dragableMessage, messageText]
 }
